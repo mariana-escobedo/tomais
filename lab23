@@ -1,0 +1,51 @@
+class Color:
+    def __init__(self, R, G, B):
+        self.R = R
+        self.G = G
+        self.B = B
+
+    def __str__(self):
+        return("({},{},{})".format(self.R, self.G, self.B))
+
+
+
+def red(colorlist):
+    for c in colorlist:
+        c.R = 0
+    return colorlist 
+
+
+def newcolor(color1, color2, w):
+    nc = Color(0, 0, 0)
+    for color1.r:
+        redp = (color1.r * w)
+        for color2.r:
+            redp2 = (1 - redp) * color2.r
+            nc.r = redp + redp2
+    return 
+
+
+
+
+
+
+    
+def main():
+        #c = Color(12, 34, 53)
+        #c.__str__()
+
+    colorlist = [Color(12, 13, 14), Color(12, 13, 14)]
+    red(colorlist)
+    for color in colorlist:
+        print(color)
+main()
+
+
+
+
+
+
+
+
+
+
