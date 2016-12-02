@@ -1,0 +1,60 @@
+class Movie:
+    def __init__(self, year, title, rating, ratingCount):
+        self.year = year
+        self.title = title
+        self.rating = rating
+        self.ratingCount = ratingCount
+
+    def __str__(self):
+        return("{}, {}, {}, {}".format(self.year, self.title, self.rating, self.ratingCount))
+
+class Actor:
+    def __init__(self, name):
+        self.name = name
+        self.moviesbeenin = ["Beetlejuice", "Batman"]
+        
+    def __str__(self):
+        return("{}, {}").format(self.name, self.moviesbeenin)
+
+    def havethey(self, movie):
+        if movie in self.moviesbeenin:
+            return True
+        else:
+            return False
+
+    def addmovie(self, movie):
+        if movie not in self.moviesbeenin:
+            self.moviesbeenin.append(movie)
+            return self.moviesbeenin 
+
+    def alist(actorlist):
+        alist = []
+        max = 0
+        for actor in actorlist:
+            for movie in actor.moviesbeenin:
+                if movie.rating > max:
+                    max = movie.rating
+
+        for actor in actorlist:
+            for movie in actor.moviesbeenin:
+                if movie.rating == max:
+                    alist.append(actor)
+
+
+
+
+def main():
+    m1 = Movie(1988, "Beetlejuice", 5, 1233) 
+    print(m1)
+    m4 = Movie(1987, "Pretty in Pink", 5, 2321)
+    a1 = Actor("Michael Keaton")
+    print(a1)
+
+
+    m2 = Movie(1987, "The Shining", 5, 1233)
+    
+    print(a1.havethey(m2))
+    print(a1.addmovie(m2))
+
+
+main()
